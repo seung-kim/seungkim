@@ -197,14 +197,18 @@ figure {
 		@include translateX(-300px);
 		padding-top: 4em;
 	}
-	.author-img{
-		width: 150px;
-		height: 150px;
-		margin: 0 auto;
-		margin-bottom: 30px;
-		@include border-radius(50%);
-	}
-	.position{
+.author-img {
+  width: 100%;               // or a fixed width like 200px
+  height: 100% !important;              // keep aspect ratio
+  background-image: url(main_pic.jpg);
+  background-size: contain; // show entire image
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border-radius: 0 !important; // <-- force removal of circle shape
+  overflow: visible !important; // just in case there's a hidden overflow
+}
+        .position{
 		display: block;
 		margin-bottom: 2em;
 		font-size: 12px;
